@@ -7,29 +7,21 @@ CC = g++
 edit : $(objects)
 	$(CC) -o edit $(objects)
 
-main.o : main.cpp
-	$(CC) -c main.cpp
+main.o :
 
-command.o : command.cpp command.h
-	$(CC) -c command.cpp
+command.o : command.h
 
-display.o : display.cpp display.h
-	$(CC) -c display.cpp
+display.o : display.h
 
-files.o : files.cpp files.h
-	$(CC) -c files.cpp
+files.o : files.h
 
-insert.o : insert.cpp insert.h
-	$(CC) -c insert.cpp
+insert.o : insert.h
 
-search.o : search.cpp search.h
-	$(CC) -c search.cpp
+search.o : search.h
 
-utils.o : utils.cpp utils.h
-	$(CC) -c utils.cpp
+utils.o : utils.h
 
-kbd.o : kbd.cpp kbd.h
-	$(CC) -c kbd.cpp
+kbd.o : kbd.h
 
 .PHONY : clean
 clean :
