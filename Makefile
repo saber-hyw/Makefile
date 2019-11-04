@@ -1,34 +1,36 @@
-
 # sample Makefile
-edit : main.o command.o display.o files.o \
-	insert.o search.o utils.o kbd.o
-	g++ -o edit main.o command.o display.o files.o \
-	insert.o search.o utils.o kbd.o
+
+objects = main.o command.o display.o files.o \
+insert.o search.o utils.o kbd.o
+CC = g++
+
+edit : $(objects)
+	$(CC) -o edit $(objects)
 
 main.o : main.cpp
-	g++ -c main.cpp
+	$(CC) -c main.cpp
 
 command.o : command.cpp command.h
-	g++ -c command.cpp
+	$(CC) -c command.cpp
 
 display.o : display.cpp display.h
-	g++ -c display.cpp
+	$(CC) -c display.cpp
 
 files.o : files.cpp files.h
-	g++ -c files.cpp
+	$(CC) -c files.cpp
 
 insert.o : insert.cpp insert.h
-	g++ -c insert.cpp
+	$(CC) -c insert.cpp
 
 search.o : search.cpp search.h
-	g++ -c search.cpp
+	$(CC) -c search.cpp
 
 utils.o : utils.cpp utils.h
-	g++ -c utils.cpp
+	$(CC) -c utils.cpp
 
 kbd.o : kbd.cpp kbd.h
-	g++ -c kbd.cpp
+	$(CC) -c kbd.cpp
 
+.PHONY : clean
 clean :
-	rm main.o command.o display.o files.o \
-	insert.o search.o utils.o kbd.o
+	-rm edit $(objects)
