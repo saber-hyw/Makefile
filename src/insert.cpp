@@ -1,5 +1,5 @@
 
-#include "insert.h"
+#include "../include/insert.h"
 
 insert::insert(/* args */)
 {

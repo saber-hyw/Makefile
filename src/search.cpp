@@ -1,5 +1,5 @@
 
-#include "search.h"
+#include "../include/search.h"
 
 search::search(/* args */)
 {

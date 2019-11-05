@@ -1,5 +1,5 @@
 
-#include "kbd.h"
+#include "../include/kbd.h"
 
 kbd::kbd(/* args */)
 {

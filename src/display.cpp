@@ -1,4 +1,5 @@
-#include "display.h"
+
+#include "../include/display.h"
 
 display::display(/* args */)
 {

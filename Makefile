@@ -2,7 +2,10 @@
 
 objects = main.o command.o display.o files.o \
 insert.o search.o utils.o kbd.o
+
 CC = g++
+
+VPATH = src:include
 
 edit : $(objects)
 	$(CC) -o edit $(objects)
