@@ -1,28 +1,21 @@
 # sample Makefile
+CC     := g++
+CFLAGS := -g -Wall
+TARGET := edit
+# 取得当前所有.cpp (一般以字符串的形式)
+SRCS   := $(wildcard *.cpp)
+OBJS   := $(patsubst %.cpp, %.o, $(SRCS))
 
-objects = main.o command.o display.o files.o \
-insert.o search.o utils.o kbd.o
-CC = g++
+# VPATH := src
 
-edit : $(objects)
-	$(CC) -o edit $(objects)
+all : $(TARGET)
+# 编译当前目录下所有的*.cpp 为对应的xxx.o
+%.o : %.cpp
+	$(CC) $(CFLAGS) -c $< -o $@
 
-main.o :
-
-command.o : command.h
-
-display.o : display.h
-
-files.o : files.h
-
-insert.o : insert.h
-
-search.o : search.h
-
-utils.o : utils.h
-
-kbd.o : kbd.h
+$(TARGET) : $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o $@
 
 .PHONY : clean
 clean :
-	-rm edit $(objects)
+	-rm $(TARGET) $(OBJS)
