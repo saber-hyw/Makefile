@@ -5,26 +5,26 @@ insert.o search.o utils.o kbd.o
 
 CC = g++
 
-VPATH = src:include
+VPATH = src
 
 edit : $(objects)
 	$(CC) -o edit $(objects)
 
 main.o :
 
-command.o : command.h
+command.o : command.cpp
 
-display.o : display.h
+display.o : display.cpp
 
-files.o : files.h
+files.o : files.cpp
 
-insert.o : insert.h
+insert.o : insert.cpp
 
-search.o : search.h
+search.o : search.cpp
 
-utils.o : utils.h
+utils.o : utils.cpp
 
-kbd.o : kbd.h
+kbd.o : kbd.cpp
 
 .PHONY : clean
 clean :
